@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Kółko i krzyżyk</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Shojumaru" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body onload="wowInit()">
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark blue-grey darken-3 scrolling-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png" style="margin-right: 10px;"/>KÓŁKO I KRZYŻYK</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link mr-2" href="#">Gra<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-2 underConstructions" href="#">Instrukcja</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-2 underConstructions" href="#">Ranking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-2 underConstructions" href="#">Archiwum</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text light-grey-text">
+                       Zrób sobie przerwe i zagraj!
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container mt-4">
+            <div class="row justify-content-around">
+                <!-- NAMES -->
+                <div class="col-lg-4 mt-5">
+                    <form id="name-form-div" class="mt-5">
+                        <p class="h5 text-center mb-4 wow fadeInDown" data-wow-delay- "0.6s">Proszę wprowadzić nazwę graczy</p>
+                        <div class="md-form wow fadeInDown" data-wow-delay- "0.2s">
+                            <i class="fa fa-circle-o prefix blue-text" aria-hidden="true"></i>
+                            <input type="text" id="form1" class="form-control" pattern="[A-Za-z]{2,20}" required="required">
+                            <label for="form1">Pierwszy gracz (kółko)</label>
+                        </div>
+                        <div class="md-form wow fadeInDown" data-wow-delay- "0.2s">
+                            <i class="fa fa-times prefix purple-text" aria-hidden="true"></i>
+                            <input type="text" id="form2" class="form-control" pattern="[A-Za-z]{2,20}" required="required">
+                            <label for="form2">Drugi gracz (krzyżyk)</label>
+                        </div>
+                        <div class="text-center wow fadeInDown" data-wow-delay- "0.2s">
+                            <button type="button" id="names-button" class="btn btn-blue-grey" onclick="changeDiv()">Zatwierdź</button>
+                        </div>
+                    </form>
+                    <!-- GAME -->
+                    <div id="game-div">
+                        <div class="row justify-content-around my-5">
+                            <div class="col-lg-4 text-center">
+                                <i class="fa fa-circle-o prefix blue-text" aria-hidden="true">Gracz 1</i>
+                                <div id="player1">p1</div>
+                                <div id="player1-stats"></div>
+                            </div>
+                            <div class="col-lg-4 text-center mt-3">
+                                <i id="reverse-players-button" class="fa fa-refresh blue-grey-text" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <i class="fa fa-times prefix purple-text" aria-hidden="true">Gracz 2</i>
+                                <div id="player2">p2</div>
+                                <div id="player2-stats"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 mx-auto mt-5 text-center">
+                            <button id="start-button" type="button" class="btn btn-blue-grey m-3 mt-4">Zacznij grę</button>
+                            <button id="give-up-button" type="button" class="btn btn-blue-grey m-3" disabled>Poddaj grę</button>
+                            <button id="move-back-button" type="button" class="btn btn-blue-grey m-3" disabled>Cofnij ruch</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- TABLE -->
+                <div class="col-lg-6 mt-4 wow zoomIn">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td id="0"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td id="1"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td id="2"><i class="fa fa-times prefix purple-text big-icon wow flipInX" data-wow-delay="0.6s" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td id="3"><i class="fa fa-circle-o blue-text big-icon wow flipInX" data-wow-delay="0.8s" aria-hidden="true"></i></td>
+                            <td id="4"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td id="5"><i class="fa big-icon" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td id="6"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td id="7"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td id="8">
+                                <i class="fa fa-times prefix purple-text big-icon wow flipInX" data-wow-delay="1.1s" aria-hidden="true"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer class="page-footer blue-grey center-on-small-only">
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright: BJStudio
+            </div>
+        </div>
+    </footer>
+    <!-- MODAL -->
+    <div class="modal fade  mt-5" id="winModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header m-2">
+                    <img src="img/medal.png" class="rounded-circle img-responsive animated rotateIn">
+                </div>
+                <div class="modal-body text-center m-2">
+                    <h5 id="winer" class="mt-1 mb-5" style="font-weight: bold;">Gratulacje!</h5>
+                    <div class="text-center">
+                        <a type="button" class="btn btn-primary-modal green" data-dismiss="modal">OK! <i class="fa fa-check ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/bootstrap/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap/mdb.min.js"></script>
+    <!-- Custom JavaScripts -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/custom/underConstruction.js"></script>
+    <script type="text/javascript" src="js/custom/game.js"></script>
+    <script type="text/javascript" src="js/custom/winnerChecker.js"></script>
+</body>
+
+</html>

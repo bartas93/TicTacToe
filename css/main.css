@@ -1,0 +1,41 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand{
+    font-family: 'Shojumaru', cursive;
+    text-align: center;
+    margin-right: 40px;
+}
+.navbar-text{
+    font-family: 'Shojumaru', cursive;
+    font-size: 90%;
+}
+td{
+    width: 180px;
+    height: 180px;
+}
+td:hover{
+    background-color: #DDDDDD;
+}
+.table td{
+    border-color: #AAAAAA !important;
+    text-align:center; 
+    vertical-align:middle;
+}
+
+#game-div{
+    display: none;
+    font-size: 150%;
+}
+
+.big-icon{
+    font-size: 140px;
+}
+
+#reverse-players-button{
+    cursor: pointer;
+}
+.gold{
+    color: #FFD700;
+}
