@@ -1,5 +1,4 @@
-var startGameService = function () {
-
+define([], function () {
     function doBlankSquare(id, squares) {
         var listClassOfSquares = squares[id].children[0].classList;
         if (listClassOfSquares.contains("fa-times")) {
@@ -22,5 +21,4 @@ var startGameService = function () {
         },
         doBlankSquare: doBlankSquare
     };
-
-}();
+});

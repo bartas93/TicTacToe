@@ -1,5 +1,4 @@
-var checkWinnerService = function () {
-
+define([], function () {
     var winningSet = [7, 56, 448, 73, 146, 292, 273, 84];
 
     function isWinner(gameHistory) {
@@ -18,10 +17,9 @@ var checkWinnerService = function () {
             }
         }
         return false;
-    }
+    };
 
     return {
         isWinner: isWinner
-    }
-
-}();
+    };
+});

@@ -1,5 +1,4 @@
-var turnAndStatisticsService = function () {
-
+define([], function () {
     var player1 = document.getElementById("player1"),
         player2 = document.getElementById("player2"),
         player1Stats = document.getElementById("player1-stats"),
@@ -27,7 +26,7 @@ var turnAndStatisticsService = function () {
     function setStyleForNothing(player) {
         player.style.fontWeight = "";
         player.style.textDecoration = "";
-    }
+    };
 
     function toggleTurn() {
         if (!document.getElementById("start-button").disabled) {
@@ -37,7 +36,7 @@ var turnAndStatisticsService = function () {
         } else {
             setTurnForCrossPlayer();
         }
-    }
+    };
 
     function changeStartingPlayer() {
         if (document.getElementById("start-button").disabled) {
@@ -66,11 +65,11 @@ var turnAndStatisticsService = function () {
         else {
             player2Stats.innerHTML += starIcon;
         }
-    }
+    };
 
     function addWinToPlayerThatDontGiveUp(gameHistory) {
         (gameHistory.length % 2 != 0) ? player2Stats.innerHTML += starIcon : player1Stats.innerHTML += starIcon;
-    }
+    };
 
     return {
         setInitialTurn: setTurnForCirclePlayer,
@@ -80,4 +79,4 @@ var turnAndStatisticsService = function () {
         addWinToPlayers: addWinToPlayers,
         addWinToPlayerThatDontGiveUp: addWinToPlayerThatDontGiveUp
     };
-}();
+});

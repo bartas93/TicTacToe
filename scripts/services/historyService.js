@@ -1,4 +1,4 @@
-var historyService = function () {
+define([], function () {
     var gameHistory = [];
 
     function add(id) {
@@ -26,5 +26,5 @@ var historyService = function () {
         removeLast: function () {
             return gameHistory.pop();
         }
-    }
-}();
+    };
+});

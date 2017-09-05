@@ -1,5 +1,4 @@
-var popUpService = function () {
-
+define(['jquery'], function ($) {
     function showPopUp(gameHistory, isWinner) {
         var winnerDiv = document.getElementById("winer");
         if (gameHistory.length === 10 && !isWinner) {
@@ -21,4 +20,4 @@ var popUpService = function () {
     return {
         showPopUp: showPopUp
     };
-}();
+});

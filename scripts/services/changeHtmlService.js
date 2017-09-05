@@ -1,16 +1,15 @@
-var changeHtmlService = function () {
-
+define([], function () {
     function bootstrapFadeOutLeft(element) {
         element.classList.add("animated");
         element.classList.add("fadeOutLeft");
         element.style.display = "none";
-    }
+    };
 
     function bootstrapFadeInRight(element) {
         element.style.display = "block";
         element.classList.add("animated");
         element.classList.add("fadeInRight");
-    }
+    };
 
     return {
         changeNameDivToGameDiv: function () {
@@ -22,4 +21,4 @@ var changeHtmlService = function () {
             bootstrapFadeInRight(document.getElementById("game-div"));
         }
     };
-}(); 
+});
