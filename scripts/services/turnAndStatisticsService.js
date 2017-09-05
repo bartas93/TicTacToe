@@ -1,4 +1,4 @@
-define([], function () {
+define("turnAndStatisticsService", [], function () {
     var player1 = document.getElementById("player1"),
         player2 = document.getElementById("player2"),
         player1Stats = document.getElementById("player1-stats"),

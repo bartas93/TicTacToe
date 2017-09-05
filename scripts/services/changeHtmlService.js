@@ -1,4 +1,4 @@
-define([], function () {
+define("changeHtmlService", [], function () {
     function bootstrapFadeOutLeft(element) {
         element.classList.add("animated");
         element.classList.add("fadeOutLeft");

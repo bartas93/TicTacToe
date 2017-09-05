@@ -1,9 +1,9 @@
 define("indexController", ["validationService", "changeHtmlService", "startGameService",
-    "turnAndStatisticsService", "historyService", "endGameService", "checkWinnerService",
-    "popUpService", "moveBackService", "moveService"],
+    "turnAndStatisticsService", "endGameService",
+    "popUpService", "moveService"],
     function (validationService, changeHtmlService, startGameService,
-        turnAndStatisticsService, historyService, endGameService, checkWinnerService,
-        popUpService, moveBackService, moveService) {
+        turnAndStatisticsService, endGameService,
+        popUpService, moveService) {
         "use strict";
         var squares = document.querySelectorAll("td"),
             init = function () {

@@ -1,4 +1,4 @@
-define([], function () {
+define("startGameService", [], function () {
     function doBlankSquare(id, squares) {
         var listClassOfSquares = squares[id].children[0].classList;
         if (listClassOfSquares.contains("fa-times")) {

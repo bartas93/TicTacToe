@@ -1,4 +1,5 @@
-define([], function () {
+var moveBackService = function () {
+
     var base = 0b1000000000000000000;
     function moveBack(gameHistory) {
         var id = moveBackByState(gameHistory);
@@ -41,10 +42,10 @@ define([], function () {
         var lastBoardState = gameHistory.pop();
         var xor = lastBoardState ^ gameHistory[gameHistory.length - 1];
         return (xor | base);
-    };
+    }
 
     return {
         moveBack: moveBack,
         moveBackButtonUnable: moveBackButtonUnable
     };
-});
+}();

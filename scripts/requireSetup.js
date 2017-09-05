@@ -20,7 +20,31 @@ require.config({
         collapsible: {
             deps: ['jquery'],
             exports: 'collapsible'
-        }
+        },
+        dropdown: {
+            deps: ['jquery'],
+            exports: 'dropdown'
+        },
+        formsBasic: {
+            deps: ['jquery'],
+            exports: 'formsBasic'
+        },
+        global: {
+            deps: ['jquery'],
+            exports: 'global'
+        },
+        scrollingNav: {
+            deps: ['jquery'],
+            exports: 'scrollingNav'
+        },
+        videoBg: {
+            deps: ['jquery'],
+            exports: 'videoBg'
+        },
+        jqueryEasing: {
+            deps: ['jquery'],
+            exports: 'jqueryEasing'
+        },
     },
 
     paths: {

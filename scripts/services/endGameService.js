@@ -1,4 +1,4 @@
-define([], function () {
+define("endGameService", [], function () {
     return {
         endGame: function () {
             document.getElementById("start-button").disabled = false;

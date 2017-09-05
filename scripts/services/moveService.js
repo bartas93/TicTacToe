@@ -1,18 +1,23 @@
-define([], function () {
+define("moveService", ['jquery'], function ($) {
 
     function isSquareBlank(id, squares) {
         return !(squares[id].children[0].classList.contains("fa-times") || squares[id].children[0].classList.contains("fa-circle-o"))
-    } ''
+    };
 
     function markCircleMove(id, squares) {
-        squares[id].children[0].classList.add("blue-text");
-        squares[id].children[0].classList.add("fa-circle-o");
-    } ''
+
+        $('td:eq(' + id + ') i').hide();
+        $('td:eq(' + id + ') i').addClass("blue-text");
+        $('td:eq(' + id + ') i').addClass("fa-circle-o");
+        $('td:eq(' + id + ') i').slideDown('slow');
+    };
 
     function markCrossMove(id, squares) {
-        squares[id].children[0].classList.add("purple-text");
-        squares[id].children[0].classList.add("fa-times");
-    } ''
+        $('td:eq(' + id + ') i').hide();
+        $('td:eq(' + id + ') i').addClass("purple-text");
+        $('td:eq(' + id + ') i').addClass("fa-times");
+        $('td:eq(' + id + ') i').slideDown('slow');
+    };
 
     return {
         isMoveValid: function (id, squares) {
