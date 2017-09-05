@@ -18,7 +18,7 @@
     <link href="css/main.css" rel="stylesheet">
 </head>
 
-<body onload="wowInit()">
+<body>
     <!-- NAVBAR -->
     <header>
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark blue-grey darken-3 scrolling-navbar">
@@ -29,16 +29,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link mr-2" href="#">Gra<span class="sr-only">(current)</span></a>
+                            <a class="nav-link mr-2" href="index.html">Gra<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-2 underConstructions" href="#">Instrukcja</a>
+                            <a class="nav-link mr-2" href="#">Instrukcja</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-2 underConstructions" href="#">Ranking</a>
+                            <a class="nav-link mr-2" href="#">Ranking</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-2 underConstructions" href="#">Archiwum</a>
+                            <a class="nav-link mr-2" href="#">Archiwum</a>
                         </li>
                     </ul>
                     <span class="navbar-text light-grey-text">
@@ -67,7 +67,7 @@
                             <label for="form2">Drugi gracz (krzyżyk)</label>
                         </div>
                         <div class="text-center wow fadeInDown" data-wow-delay- "0.2s">
-                            <button type="button" id="names-button" class="btn btn-blue-grey" onclick="changeDiv()">Zatwierdź</button>
+                            <button type="button" id="name-form-div-button" class="btn btn-blue-grey">Zatwierdź</button>
                         </div>
                     </form>
                     <!-- GAME -->
@@ -98,19 +98,19 @@
                 <div class="col-lg-6 mt-4 wow zoomIn">
                     <table class="table table-bordered">
                         <tr>
-                            <td id="0"><i class="fa big-icon" aria-hidden="true"></i></td>
-                            <td id="1"><i class="fa big-icon" aria-hidden="true"></i></td>
-                            <td id="2"><i class="fa fa-times prefix purple-text big-icon wow flipInX" data-wow-delay="0.6s" aria-hidden="true"></i></td>
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-times prefix purple-text big-icon wow flipInX" data-wow-delay="0.6s" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
-                            <td id="3"><i class="fa fa-circle-o blue-text big-icon wow flipInX" data-wow-delay="0.8s" aria-hidden="true"></i></td>
-                            <td id="4"><i class="fa big-icon" aria-hidden="true"></i></td>
-                            <td id="5"><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-circle-o blue-text big-icon wow flipInX" data-wow-delay="0.8s" aria-hidden="true"></i></td>
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
-                            <td id="6"><i class="fa big-icon" aria-hidden="true"></i></td>
-                            <td id="7"><i class="fa big-icon" aria-hidden="true"></i></td>
-                            <td id="8">
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td><i class="fa big-icon" aria-hidden="true"></i></td>
+                            <td>
                                 <i class="fa fa-times prefix purple-text big-icon wow flipInX" data-wow-delay="1.1s" aria-hidden="true"></i></td>
                         </tr>
                     </table>
@@ -122,7 +122,7 @@
     <footer class="page-footer blue-grey center-on-small-only">
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2015 Copyright: BJStudio
+                © 2017 Copyright: BJStudio
             </div>
         </div>
     </footer>
@@ -144,19 +144,27 @@
     </div>
 
     <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/bootstrap/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap/mdb.min.js"></script>
-    <!-- Custom JavaScripts -->
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/custom/underConstruction.js"></script>
-    <script type="text/javascript" src="js/custom/game.js"></script>
-    <script type="text/javascript" src="js/custom/winnerChecker.js"></script>
+    <!-- MODULOWO BEZ REQUIRE JS -->
+    <script type="text/javascript" src="scripts/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/popper.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/mdb.min.js"></script>
+    <script type="text/javascript" src="scripts/indexController.js"></script>
+    <script type="text/javascript" src="scripts/services/changeHtmlService.js"></script>
+    <script type="text/javascript" src="scripts/services/validationService.js"></script>
+    <script type="text/javascript" src="scripts/services/startGameService.js"></script>
+    <script type="text/javascript" src="scripts/services/turnAndStatisticsService.js"></script>
+    <script type="text/javascript" src="scripts/services/historyService.js"></script>
+    <script type="text/javascript" src="scripts/services/moveService.js"></script>
+    <script type="text/javascript" src="scripts/services/checkWinnerService.js"></script>
+    <script type="text/javascript" src="scripts/services/popUpService.js"></script>
+    <script type="text/javascript" src="scripts/services/endGameService.js"></script>
+    <script type="text/javascript" src="scripts/services/moveBackService.js"></script>
+
+    <!-- REQUIER JS - NIEDZIALAJACY -->
+    <!--     <script data-main="scripts1/requireSetup" src="scripts1/lib/require.js"></script> -->
+
+
 </body>
 
 </html>

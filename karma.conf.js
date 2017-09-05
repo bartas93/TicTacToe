@@ -1,7 +1,7 @@
 // Karma configuration
-// Generated on Wed Aug 30 2017 12:16:09 GMT+0200 (W. Europe Daylight Time)
+// Generated on Mon Sep 04 2017 13:29:53 GMT+0200 (W. Europe Daylight Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -10,18 +10,15 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
-      {pattern: '/js/tests', included: false},
-      {pattern: 'cd C:\Users\Bjablons\Desktop\PROJEKTY\JAVASCRIPT\Kolko i Krzyzyk\js\tests', included: false},
-      {pattern: 'C:\Users\Bjablons\Desktop\PROJEKTY\JAVASCRIPT\Kolko i Krzyzyk\js\tests', included: false},
-      {pattern: 'C:\Users\Bjablons\Desktop\PROJEKTY\JAVASCRIPT\Kolko i Krzyzyk\js', included: false},
-      {pattern: 'C:\Users\Bjablons\Desktop\PROJEKTY\JAVASCRIPT\Kolko i Krzyzyk', included: false},
-      {pattern: 'C:\Users\Bjablons\Desktop\PROJEKTY\JAVASCRIPT\Kolko i Krzyzyk\js', included: false}
+      'scripts/services/historyService.js',
+      'scripts/services/checkWinnerService.js',
+      'scripts/services/moveBackService.js',
+      'scripts/tests/*.js'
     ],
 
 
@@ -56,7 +53,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
