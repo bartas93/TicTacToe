@@ -1,4 +1,8 @@
-Zalozenia:
+Gra przeglądarkowa - Kółko i krzyżyk.
+
+Użyte technologie: JavaScript, HTML, CSS, MD Bootstrap
+
+Zalozenia aplikacji:
 1.	Gra dla dwóch graczy, z których kazdy na przemian klika na plansze 3x3, stawiajac kólko lub krzyzyk.
 2.	Przycisk, który zmienia poczatkowego gracza (kólko / krzyzyk) – dziala tylko dla nowej gry. Jesli gra juz sie rozpoczela, to przycisk zmienia rozpoczynajacego gracza od kolejnej gry.
 3.	Przycisk do resetowania gry i zaczynania nowej. Po skonczonej grze, reset ma NIE nastepowac automatycznie. To znaczy, ze po wygranej jednego z graczy lub remisie stan gry ma pozostac taki, jak po ostatnim ruchu.
